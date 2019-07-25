@@ -1,0 +1,19 @@
+{
+  "name": "hello-apollo",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "author": "theroka <rokatron.rk@gmail.com>",
+  "license": "GPL3",
+  "private": true,
+  "devDependencies": {
+    "@types/graphql": "^14.2.3",
+    "@types/ramda": "^0.26.18",
+    "apollo-server": "^2.7.0",
+    "graphql": "^14.4.2",
+    "gulp": "^4.0.2",
+    "gulp-cli": "^2.2.0",
+    "gulp-typescript": "^5.0.1",
+    "ramda": "^0.26.1",
+    "typescript": "^3.6.0-dev.20190725"
+  }
+}
