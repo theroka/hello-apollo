@@ -8,9 +8,13 @@ const typeDefs = readFileSync(__dirname + "/schema.gql").toString();
 
 const resolvers = {
   Query: mergeAll([Book.queryResolvers, Author.queryResolvers]),
-  Mutation: mergeAll([Book.mutationResolvers])
+  Mutation: mergeAll([Book.mutationResolvers]),
+  Subscription: mergeAll([Book.subscriptionResolvers])
 };
 
 const server = new ApolloServer({ typeDefs, resolvers });
 
-server.listen().then(s => console.log(`Server ready at ${s.url}`));
+server.listen().then(s => {
+  console.log(`Server ready at ${s.url}`)
+  console.log(`Subscriptions ready at ${s.subscriptionsUrl}`)
+});
