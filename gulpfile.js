@@ -13,7 +13,8 @@ gulp.task("build", function() {
 // copy static assets to dist folder
 gulp.task("assets", function() {
   return gulp.src([
-    "src/schema.gql"
+    "src/schema.gql",
+    "protos/Books.proto"
   ])
     .pipe(gulp.dest("build"))
 })

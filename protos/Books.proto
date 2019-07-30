@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+// package BooksPackage;
+
+service Books {
+  rpc getAll (Empty) returns (stream Book) {}
+  rpc getByTitle (TitleRequest) returns (stream Book) {}
+  rpc getByAuthor (AuthorRequest) returns (stream Book) {}
+  rpc addBooks(stream Book) returns (AddBooksResponse) {}
+  rpc deleteBooks(stream Book) returns (DeleteBooksResponse) {}
+}
+
+message Empty {}
+
+message Book {
+  string title = 1;
+  string author = 2;
+}
+
+message TitleRequest {
+  string title = 1;
+}
+
+message AuthorRequest {
+  string author = 1;
+}
+
+message AddBooksResponse {
+  repeated Book books = 1;
+}
+
+message DeleteBooksResponse {
+  repeated Book books = 1;
+}
