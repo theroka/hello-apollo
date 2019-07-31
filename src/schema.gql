@@ -1,7 +1,7 @@
 "A book written by a human."
 type Book {
   title: String
-  author: String
+  author: Author
 }
 
 "A human."
@@ -11,12 +11,10 @@ type Author {
 }
 
 type Query {
-  "Get a list of all books."
-  getBooks: [Book]
-  "Get a list of all authors."
-  getAuthors: [Author]
-  "Get an author by full name."
-  getAuthorByName(name: String): Author
+  authors: [Author]
+  author(name: String): Author
+  books: [Book]
+  book(title: String): [Book]
 }
 
 type Mutation {
